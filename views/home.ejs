@@ -29,25 +29,27 @@
         </form>
         </div>
         <div id="display-task">
+            <form action="/delete-task" method="GET">
             <ul>
                 <% for(let i of tasks){%>
                     <li class="task">
                         <div>
+                            <input type="checkbox" name="<%=i._id%>">
                             <p><%=i.task%></p>
                             <p><%=i.category%></p>
                             <p><%=i.duedate%></p>
                         </div>
-                        <div class="delete-button">
+                        <!--<div class="delete-button">
                             <a href="/delete-task/?id=<%=i._id%>">
                                 <i class="fas fa-window-close"></i>
                             </a>
-                        </div>
+                        </div>-->
                     </li>
                 <%}%>
 
-
+            <button  type="submit" id="delete-button">DELETE</button>
             </ul>
-
+            </form>
         </div>
     </body>
 </html>

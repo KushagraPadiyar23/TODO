@@ -47,24 +47,26 @@ app.post('/create-task',function(req,res){
         //return res.redirect('back');
     });
     return res.redirect('back');
-   /* return res.render('practice',{
-        title:"practice makes a man perfect"
-    });*/
+  
 });
 
 //deleting a task
 app.get('/delete-task/',function(req,res){
 
-    let id=req.query.id;
-    Todo.findByIdAndDelete(id,function(err){
-        if(err)
-        {
-            console.log("error occured while deleting the contact");
-            return;
-        }
-        return res.redirect('back');
-    })
-
+    
+    let id=req.query;
+    var count=Object.keys(id).length;
+    for(let i=0;i<count;i++)
+    {
+        Todo.findByIdAndDelete(Object.keys(id)[i],function(err){
+            if(err)
+            {
+                console.log("error occured while deleting the contact");
+                return;
+            }
+            return res.redirect('back');
+        });
+    }
 });
 
 //firing the server
