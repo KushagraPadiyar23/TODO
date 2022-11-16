@@ -5,23 +5,26 @@
 
 
 body {
+	
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
+	height: 100%;
     width: 80vw;
     margin: auto;
+	scroll-behavior: auto;
+scroll-behavior: smooth;
 }
-/*.wrapper{
+.wrapper{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	width: 40vw;
+	width: 60vw;
 	padding: 30px;
 	background-color: rgb(255, 238, 217);
 }
-
+/*
 .headline{
 	text-align: center;
 	

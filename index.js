@@ -19,7 +19,7 @@ app.get('/',function(req,res){
     Todo.find({},function(err,todos){
         if(err)
         {
-            console.log('error occured while fetcjing the taks');
+            console.log('error occured while fetching the taks');
             return;
         }
         return res.render('home',{title:"My To-Do List",

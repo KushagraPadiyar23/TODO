@@ -3,13 +3,17 @@
         <title>
             <%=title%>
         </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://kit.fontawesome.com/fc417cf38f.js" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
         <link rel="stylesheet" href="/CSS/home.css">
     </head>
     <body>
-        <h1 id="heading">
-            <i class="fas fa-address-book"></i>TODO App</h1>
-        </h1>
+        
+        <div class="wrapper">
+            <h1 id="heading">
+                <i class="fas fa-address-book"></i>TODO App</h1>
+            </h1>
         <hr>
         <div id="form-fill">
         <form action="/create-task" method="POST">
@@ -25,7 +29,7 @@
             </select>
             <label for="due date" name="duedate">DUEDATE</label>
             <input type="date" name="duedate">
-            <button type="submit">ADD TASK</button>
+            <button type="submit" class="btn btn-success"><i class="fas fa-plus"></i>ADD TASK</button>
         </form>
         </div>
         <div id="display-task">
@@ -35,10 +39,11 @@
                     <li class="task">
                         <div>
                             <input type="checkbox" name="<%=i._id%>">
-                            <p><%=i.task%></p>
-                            <p><%=i.category%></p>
-                            <p><%=i.duedate%></p>
+                            <p><b>Task--&nbsp;</b><%=i.task%></p>
+                            <p><b>Category--&nbsp</b><%=i.category%></p>
+                            <p><i class="fas fa-calendar-alt"></i><%=i.duedate%></p>
                         </div>
+                        <hr>
                         <!--<div class="delete-button">
                             <a href="/delete-task/?id=<%=i._id%>">
                                 <i class="fas fa-window-close"></i>
@@ -47,9 +52,11 @@
                     </li>
                 <%}%>
 
-            <button  type="submit" id="delete-button">DELETE</button>
+            <button  type="submit" id="delete-button" class="btn btn-danger">DELETE</button>
             </ul>
             </form>
         </div>
+       </div> 
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     </body>
 </html>
